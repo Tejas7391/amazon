@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        button{
+            background-color: white;
+            color: black;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px;
+
+        }
+        input{
+            width: 150px;
+            height: 40px;
+            text-align: right;
+            font-size: 15px;
+            border-radius: 9px;
+            border: 10px;
+        }
+        #a1{
+            background-color: orange;
+        }
+        #a2{
+            background-color: orange;
+        }
+        #a3{
+            background-color: orange;
+        }
+        #a4{
+            background-color: orange;
+        }
+        #a5{
+            background-color: orange;
+        }
+        #a6{
+            background-color: orange;
+        }
+        #b1{
+            background-color: gray;
+        }
+        #b2{
+            background-color: gray;
+        }
+        #b3{
+            background-color: gray;
+        }
+        
+    </style>
+</head>
+<body>
+    <table bgcolor="black" align="center">
+        <tr>
+            <td colspan="3"><input type="text" id="result" readonly></td>
+            <td><button id="a6" onclick="clear_result">C</button></td>
+        </tr>
+        <tr>
+            <td><button id="b1" onclick="clear_result()">AC</button></td>
+            <td><button id="b2" onclick="display('+/-')" >+/-</button></td>
+            <td><button id="b3" onclick="display('%')" >%</button></td>
+            <td><button id="a5" onclick="display('/')" >/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('7')" >7</button></td>
+            <td><button onclick="display('8')" >8</button></td>
+            <td><button onclick="display('9')" >9</button></td>
+            <td><button id="a1" onclick="display('*')" >*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('4')" >4</button></td>
+            <td><button onclick="display('5')" >5</button></td>
+            <td><button onclick="display('6')" >6</button></td>
+            <td ><button id="a2" onclick="display('-')" >-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('1')" >1</button></td>
+            <td><button onclick="display('2')" >2</button></td>
+            <td><button onclick="display('3')" >3</button></td>
+            <td><button id="a3" onclick="display('+')" >+</button></td>
+        </tr>
+        <tr>
+        <tr>
+            <td ><button onclick="display('0')">0</button></td>
+            <td ><button onclick="display('00')">00</button></td>
+            <td><button onclick="display('.')">.</button></td>
+            <td><button id="a4" onclick="calc_result()">=</button></td>
+        </tr>
+    </table>
+    <script>
+        function display(x)
+        {
+            document.getElementById("result").value+=x;
+        }
+
+        function calc_result()
+        {
+            e = document.getElementById("result").value;
+            document.getElementById("result").value = eval(e);
+        }
+
+        function clear_result()
+        {
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
